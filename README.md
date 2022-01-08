@@ -8,6 +8,8 @@ Literature:
 
 ## Demo
 
+The following yaml snippet (`deployment.yaml`) will create a ServiceAccount, a Role, a RoleBinding and a Deployment with three Pod Replicas that represents our service.
+
 ```yaml
 apiVersion: v1
 automountServiceAccountToken: true
@@ -80,6 +82,8 @@ spec:
 
 ### Leader election in action
 
+We now look at the status of the deployment in the cluster
+
 ```bash
 ➜  k8s-leader-election kubectl get pods
 
@@ -97,8 +101,7 @@ NAME                   HOLDER                                  AGE
 leader-election-demo   leader-election-demo-684dc87bb8-h8hsb   4m36s
 ```
 
-Watch the logs:
-
+### Watch the logs
 
 Node `leader-election-demo-684dc87bb8-h8hsb` (leader)
 ```bash
